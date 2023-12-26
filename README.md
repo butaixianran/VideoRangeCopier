@@ -18,7 +18,7 @@ Basicly, this project is for tutorial. But also can be used as a handy video too
 
 ![](img/screenshot_copy_range.jpg)   ![](img/screenshot_merge.jpg)  
 
-(The Setting page is not used, it is just an example for router).
+
 
 # How to use
 * Download ffmpeg
