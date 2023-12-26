@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:VideoRangeCopier.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+             x:Class="VideoRangeCopier.Views.SettingView"
+			 x:DataType="vm:SettingViewModel">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:SettingViewModel />
+	</Design.DataContext>
+
+	<StackPanel>
+
+		<Panel Background="Gray" Height="40">
+			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">Setting</TextBlock>
+			<Button HorizontalAlignment="Right" Margin="5" Command="{Binding BackToHomeClick}">Back to Home</Button>
+		</Panel>
+
+		<StackPanel Margin="5">
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Margin="5" VerticalAlignment="Center">FFmpeg Path:</TextBlock>
+				<Button Margin="5">Pick</Button>
+			</StackPanel>
+			<TextBox Margin="5" VerticalAlignment="Center" Watermark="Can fill path manually" />
+			<Button Margin="5">Save</Button>
+		</StackPanel>
+		
+
+	</StackPanel>
+</UserControl>
