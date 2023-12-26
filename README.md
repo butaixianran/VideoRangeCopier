@@ -27,5 +27,5 @@ Then:
 * Pick a video file and set range
 * Click Start button
 
-Output video file will be in the same folder as input video and named as: `input_video_name(range_frame-range_to).ext`. `.ext` can be any video format ffmpeg support.  
+Output video file will be in the same folder as input video and named as: `input_video_name(range_frame-range_to).ext`. `.ext` can be any video format ffmpeg supports.  
 
