@@ -64,6 +64,32 @@ namespace VideoRangeCopier.Util
 
         }
 
+        public static async Task<bool> MergeVideoAndAudio()
+        {
+            string command = $"-c copy -map 0:v -map 1:a";
+
+            bool result = false;
+
+            try
+            {
+                result = await FFMpegArguments
+                    .FromFileInput(Global.MergeOpt.video_path)
+                    .AddFileInput(Global.MergeOpt.audio_path)
+                    .OutputToFile(Global.MergeOpt.output_path, false, options => options
+                    .WithCustomArgument(command))
+                    .ProcessAsynchronously();
+            }
+            catch (Exception e)
+            {
+                Global.Error = e.Message;
+                return false;
+            }
+
+            return result;
+
+
+        }
+
 
     }
 }

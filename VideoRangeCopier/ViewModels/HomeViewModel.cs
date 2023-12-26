@@ -12,18 +12,18 @@ namespace VideoRangeCopier.ViewModels
 
 
         /// <summary>
-        /// Go to settting page
+        /// Go to merge video page
         /// </summary>
-        public void SettingClick()
+        public void MergePageClick()
         {
             if (Global.GotoPage is null) { return; }
-            Global.GotoPage("setting");
+            Global.GotoPage("merge");
         }
 
         public void SelectVideoFile()
         {
             if (Global.GotoPage is null) { return; }
-            Global.GotoPage("setting");
+            Global.GotoPage("merge");
         }
 
     }

@@ -18,7 +18,7 @@ public partial class MainViewModel : ViewModelBase
     {
         //Add all view models to pages with custom route names
         pages["home"] = new HomeViewModel();
-        pages["setting"] = new SettingViewModel();
+        pages["merge"] = new MergeViewModel();
 
         //Set current page to home on start up
         currentPage = pages["home"];

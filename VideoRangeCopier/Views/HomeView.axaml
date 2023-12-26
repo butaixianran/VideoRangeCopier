@@ -14,7 +14,7 @@
 	<StackPanel>
 		<Panel Background="Gray" Height="40">
 			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">Home</TextBlock>
-			<Button HorizontalAlignment="Right" Margin="5" Command="{Binding SettingClick}">Setting</Button>
+			<Button HorizontalAlignment="Right" Margin="5" Command="{Binding MergePageClick}">Merge Video Page</Button>
 		</Panel>
 
 		<StackPanel>

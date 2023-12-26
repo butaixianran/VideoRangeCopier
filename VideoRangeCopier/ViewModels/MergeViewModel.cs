@@ -7,7 +7,7 @@ using VideoRangeCopier.Util;
 
 namespace VideoRangeCopier.ViewModels
 {
-    public partial class SettingViewModel : ViewModelBase
+    public partial class MergeViewModel : ViewModelBase
     {
 
         public void BackToHomeClick()

@@ -17,5 +17,6 @@ namespace VideoRangeCopier.Util
         public static Action<string>? GotoPage;
 
         public static VideoOption VideoOpt = new VideoOption();
+        public static MergeOption MergeOpt = new MergeOption();
     }
 }

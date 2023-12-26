@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:VideoRangeCopier.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+             x:Class="VideoRangeCopier.Views.MergeView"
+			 x:DataType="vm:MergeViewModel">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MergeViewModel />
+	</Design.DataContext>
+
+	<StackPanel>
+
+		<Panel Background="Gray" Height="40">
+			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">Merge Video and Audio</TextBlock>
+			<Button HorizontalAlignment="Right" Margin="5" Command="{Binding BackToHomeClick}">Back to Home</Button>
+		</Panel>
+
+		<StackPanel Margin="5">
+			<Border Margin="5" Padding="10" Background="Gray" HorizontalAlignment="Left" Width="80" DragDrop.AllowDrop="True">
+				<TextBlock>Drop File</TextBlock>
+			</Border>
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Margin="5" VerticalAlignment="Center">Video File:</TextBlock>
+				<Button Margin="5" Click="SelectVideoFile_Clicked">Pick</Button>
+			</StackPanel>
+			<TextBlock Name="VideoPathTextBlock" Margin="5"></TextBlock>
+
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBlock Margin="5" VerticalAlignment="Center">Audio File:</TextBlock>
+				<Button Margin="5" Click="SelectAudioFile_Clicked">Pick</Button>
+
+			</StackPanel>
+			<TextBlock Name="AudioPathTextBlock" Margin="5"></TextBlock>
+
+			<StackPanel Margin="5">
+				<Button Margin="5" Click="Start_Click">Start</Button>
+			</StackPanel>
+
+			<StackPanel Margin="5">
+				<TextBlock Name="LogTextBlock" Margin="5" TextWrapping="Wrap">This page will merge a video and an audio into a new video without re-encoding</TextBlock>
+			</StackPanel>
+		</StackPanel>
+		
+
+	</StackPanel>
+</UserControl>

@@ -42,7 +42,7 @@ namespace VideoRangeCopier.Views
             Global.VideoOpt.GetInfoByUri(file.Name, file.Path);
 
             VideoPathTextBlock.Text = Global.VideoOpt.path;
-            VideoDurationTextBlock.Text = $"Duration:{Global.VideoOpt.duration}";
+            VideoDurationTextBlock.Text = $"Duration: {Global.VideoOpt.duration}";
             VideoInfoPanel.IsVisible = true;
 
         }
@@ -74,7 +74,7 @@ namespace VideoRangeCopier.Views
                 return;
             }
 
-            LogTextBlock.Text = "Starting...";
+            LogTextBlock.Text = "Processing...";
 
             bool result = await VideoHelper.CopyRange();
             if (!string.IsNullOrEmpty(Global.Error))
@@ -120,7 +120,7 @@ namespace VideoRangeCopier.Views
             await Global.VideoOpt.GetInfoByUri(item.Name, item.Path);
 
             VideoPathTextBlock.Text = Global.VideoOpt.path;
-            VideoDurationTextBlock.Text = $"Duration:{Global.VideoOpt.duration}";
+            VideoDurationTextBlock.Text = $"Duration: {Global.VideoOpt.duration}";
             VideoInfoPanel.IsVisible = true;
 
         }
