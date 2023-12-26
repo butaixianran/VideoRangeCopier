@@ -20,10 +20,12 @@ Basicly, this project is for tutorial. But also can be used as a handy video too
 # How to use
 * Download ffmpeg
 * Setup windows Environment variables, so ffmpeg can be used anywhere.
-* Download latest release, unzip  
+* Download latest release of this project, unzip  
 
 Then:  
 * Run `VideoRangeCopier.Desktop.exe` to open GUI
 * Pick a video file and set range
 * Click Start button
+
+Output video file will be in the same folder as input video and named as: `input_video_name(range_frame-range_to).ext`. `.ext` can be any video format ffmpeg support.  
 
