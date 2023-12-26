@@ -3,12 +3,13 @@ A windows Avalonia v11 App which can cut a range of video into a new video witho
 (Need ffmpeg installed and added into windows Environment variables)  
 
 
-This project can be treat as a nice example for learning AvaloniaUI 11, which includes following features:  
+This project can be treated as a nice example for learning AvaloniaUI 11, which includes following features:  
 * Basic route based on View Locator
 * File picker
 * File Drag and Drop
 * MessageBox for Avalonia
-* Publish almost as a single `.exe` file on windows
+* Helper method to handle debug log. 
+* Publish as a single `.exe` file (almost) on windows
 * Custom icon for published `.exe` file on windows
 
 Basicly, this project is for tutorial. But also can be used as a handy video tool.   
