@@ -13,7 +13,7 @@ This project can be treat as a nice example for learning AvaloniaUI 11, which in
 
 Basicly, this project is for tutorial. But also can be used as a handy video tool.   
 
-![](img\screenshot.jpg)  
+![](img/screenshot.jpg)  
 
 (The Setting page is not used, it is just an example for router).
 
