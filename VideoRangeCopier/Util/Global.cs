@@ -10,7 +10,7 @@ namespace VideoRangeCopier.Util
     public static class Global
     {
         public static string AppName = "VideoRangeCopier";
-        public static string AppVersion = "";
+        public static string AppVersion = "0.3.0";
 
         public static string Error = "";
 

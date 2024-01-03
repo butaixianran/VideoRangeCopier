@@ -16,7 +16,8 @@ namespace VideoRangeCopier.Views
         public MergeView()
         {
             InitializeComponent();
-            AddHandler(DragDrop.DropEvent, File_Drop);
+            DropVideoBorder.AddHandler(DragDrop.DropEvent, DropVideo);
+            DropAudioBorder.AddHandler(DragDrop.DropEvent, DropAudio);
         }
 
         private async void SelectVideoFile_Clicked(object sender, RoutedEventArgs args)
@@ -75,7 +76,7 @@ namespace VideoRangeCopier.Views
 
         }
 
-        private void File_Drop(object? sender, DragEventArgs e)
+        private void DropVideo(object? sender, DragEventArgs e)
         {
             if (!e.Data.Contains(DataFormats.Files)) { return; }
 
@@ -98,20 +99,36 @@ namespace VideoRangeCopier.Views
             Helper.Log($"Dragged Item name:{item.Name}");
             Helper.Log($"Dragged Item path:{item.Path}");
 
-            string ext = Path.GetExtension(item.Name);
+            Global.MergeOpt.GetVideoInfoByUri(item.Name, item.Path);
+            VideoPathTextBlock.Text = Global.MergeOpt.video_path;
 
-            string[] audio_exts = [".m4a", ".wav", ".mp3"];
+        }
 
-            if (audio_exts.Contains(ext))
+        private void DropAudio(object? sender, DragEventArgs e)
+        {
+            if (!e.Data.Contains(DataFormats.Files)) { return; }
+
+            var files = e.Data.GetFiles() ?? Array.Empty<IStorageItem>();
+
+            if (files.Count() < 1)
             {
-                Global.MergeOpt.GetAudioInfoByUri(item.Path);
-                AudioPathTextBlock.Text = Global.MergeOpt.audio_path;
+                return;
             }
-            else 
+
+            var item = files.First();
+
+            if (item is null) { return; }
+
+            if (!(item is IStorageFile))
             {
-                Global.MergeOpt.GetVideoInfoByUri(item.Name, item.Path);
-                VideoPathTextBlock.Text = Global.MergeOpt.video_path;
+                return;
             }
+
+            Helper.Log($"Dragged Item name:{item.Name}");
+            Helper.Log($"Dragged Item path:{item.Path}");
+
+            Global.MergeOpt.GetAudioInfoByUri(item.Path);
+            AudioPathTextBlock.Text = Global.MergeOpt.audio_path;
 
         }
 

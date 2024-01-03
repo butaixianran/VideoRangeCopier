@@ -27,7 +27,13 @@ namespace VideoRangeCopier.Model
 
             string name_no_ext = video_name.Replace(ext, "");
 
-            string new_name = name_no_ext + "_merged" + ext;
+            string new_ext = ext;
+            if (new_ext != ".mp4" && new_ext != ".mkv")
+            {
+                new_ext = ".mp4";
+            }
+
+            string new_name = name_no_ext + "_merged" + new_ext;
 
             output_path = video_path.Replace(video_name, new_name);
 

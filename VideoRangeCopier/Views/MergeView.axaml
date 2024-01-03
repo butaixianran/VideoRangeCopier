@@ -20,13 +20,14 @@
 		</Panel>
 
 		<StackPanel Margin="5">
-			<Border Margin="5" Padding="10" Background="Gray" HorizontalAlignment="Left" Width="80" DragDrop.AllowDrop="True">
-				<TextBlock>Drop File</TextBlock>
-			</Border>
+
 
 			<StackPanel Orientation="Horizontal" Margin="5">
 				<TextBlock Margin="5" VerticalAlignment="Center">Video File:</TextBlock>
 				<Button Margin="5" Click="SelectVideoFile_Clicked">Pick</Button>
+				<Border Name="DropVideoBorder" Margin="5" Padding="10" Background="Gray" HorizontalAlignment="Left" Width="130" DragDrop.AllowDrop="True" CornerRadius="4">
+					<TextBlock>Drop Video File</TextBlock>
+				</Border>
 			</StackPanel>
 			<TextBlock Name="VideoPathTextBlock" Margin="5"></TextBlock>
 
@@ -34,7 +35,9 @@
 			<StackPanel Orientation="Horizontal" Margin="5">
 				<TextBlock Margin="5" VerticalAlignment="Center">Audio File:</TextBlock>
 				<Button Margin="5" Click="SelectAudioFile_Clicked">Pick</Button>
-
+				<Border Name="DropAudioBorder" Margin="5" Padding="10" Background="Gray" HorizontalAlignment="Left" Width="130" DragDrop.AllowDrop="True" CornerRadius="4">
+					<TextBlock>Drop Audio File</TextBlock>
+				</Border>
 			</StackPanel>
 			<TextBlock Name="AudioPathTextBlock" Margin="5"></TextBlock>
 
